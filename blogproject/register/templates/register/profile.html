@@ -1,0 +1,40 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Мой профиль{% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h2 style="text-align: center;">Мой профиль</h2>
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+        <div class="profile-section" style="text-align: center; margin-top: 20px;">
+            <h3 style="text-align: center; color: #F80012;">Личные данные</h3>
+            <p><strong>Имя пользователя:</strong> {{ request.user.username }}</p>
+            <p><strong>Email:</strong> {{ request.user.email }}</p>
+        </div>
+        <div class="profile-section" style="text-align: center; margin-top: 20px;">
+            <h3 style="text-align: center; color: #F80012;">Текущий аватар</h3>
+            {% if request.user.profile.avatar %}
+                <img src="{{ request.user.profile.avatar.url }}" alt="Аватар {{ request.user.username }}" style="width: 150px; height: auto; border-radius: 50%; display: inline-block;">
+            {% else %}
+                <i class="fa-solid fa-user" style="font-size: 150px; color: #ffffff; display: inline-block;"></i>
+            {% endif %}
+            <form method="post" enctype="multipart/form-data" style="margin-top: 10px;">
+                {% csrf_token %}
+                {{ profile_form.as_p }}
+                <button type="submit" name="avatar_submit" class="btn btn-success">Обновить аватар</button>
+            </form>
+        </div>
+        <div class="profile-section" style="text-align: center; margin-top: 20px;">
+            <h3 style="text-align: center; color: #F80012;">Изменение пароля</h3>
+            <form method="post" style="margin-top: 10px;">
+                {% csrf_token %}
+                {{ password_form.as_p }}
+                <button type="submit" name="password_submit" class="btn btn-primary">Изменить пароль</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

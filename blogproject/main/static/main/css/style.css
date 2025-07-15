@@ -1,0 +1,244 @@
+body {
+    background: #626262;
+}
+
+aside {
+    float: left;
+    background: #1E1E1E;
+    width: 20%;
+    padding: 2.5%;
+    height: 100vh;
+    color: white;
+    border-right: 5px solid #F80012;
+    border-left: 5px solid #F80012;
+    position: fixed;
+}
+
+aside img {
+    width: 80px;
+    float: left;
+}
+
+aside .logo {
+    font-size: 15px;
+    margin-left: 10px;
+    font-weight: bold;
+    position: relative;
+    top: 25px;
+}
+
+aside h3 {
+    margin-top: 55px;
+    font-size: 28px;
+    text-align: left;
+}
+
+aside ul {
+    list-style: none;
+}
+
+aside ul li {
+    color: white;
+    display: block;
+    margin-top: 18px;
+    transition: transform .3s ease;
+}
+
+aside ul li:hover, aside ul a:hover {
+    color: #F80012;
+    text-decoration: none;
+    transform: scale(1.06);
+}
+
+main .features {
+    margin-left: 22%;
+    float: left;
+    color: white;
+    margin-top: 20px;
+    width: 75%;
+}
+
+main .features h1 {
+    font-size: 50px;
+}
+
+main .features p {
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.alert-warning {
+    float: left;
+    left: -40px;
+    clear: both;
+    width: 450px;
+    margin: 20px 34%;
+    text-align: center;
+}
+
+form {
+    margin-left: 29%;
+    width: 500px;
+    margin-top: 50px;
+}
+
+.alert-success {
+    background-color: #28a745;
+    color: white;
+    padding: 10px;
+    margin: 10px auto;
+    width: 500px;
+    text-align: center;
+}
+
+.alert-error {
+    background-color: #dc3545;
+    color: white;
+    padding: 10px;
+    margin: 10px auto;
+    width: 500px;
+    text-align: center;
+}
+
+.admin-tag {
+    color: #F80012;
+    font-weight: bold;
+}
+
+.profile-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #2c2c2c;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    color: #ffffff;
+}
+
+.profile-section {
+    margin-bottom: 30px;
+    padding: 15px;
+    border: 1px solid #444444;
+    border-radius: 5px;
+}
+
+.profile-section h2 {
+    text-align: center;
+    color: #F80012;
+    margin-bottom: 20px;
+}
+
+.profile-section h3 {
+    text-align: center;
+    color: #F80012;
+    margin-bottom: 15px;
+}
+
+.profile-data p {
+    margin: 5px 0;
+    font-size: 1.1em;
+}
+
+.avatar-icon {
+    display: block;
+    margin: 0 auto 15px;
+    text-align: center;
+}
+
+.avatar-icon img,
+.avatar-icon i {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: #444444;
+}
+
+.avatar-icon i {
+    line-height: 150px;
+    color: #ffffff;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.btn {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.features .container {
+    max-width: 900px;
+}
+
+.features .card {
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.features .card:hover {
+    transform: translateY(-5px);
+}
+
+.features .btn-primary {
+    background-color: #F80012;
+    border-color: #F80012;
+}
+
+.features .btn-primary:hover {
+    background-color: #d70010;
+    border-color: #d70010;
+}
+
+.features hr {
+    border-color: #F80012;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.list-group-item {
+    border-color: #444444;
+}
+
+@media (max-width: 768px) {
+    aside {
+        width: 100%;
+        height: auto;
+        position: relative;
+        border-right: none;
+        border-bottom: 5px solid #F80012;
+    }
+
+    main .features {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .alert-warning {
+        width: 90%;
+        margin: 20px auto;
+        left: 0;
+    }
+
+    form {
+        margin-left: auto;
+        width: 90%;
+    }
+
+    .profile-container {
+        margin: 10px;
+        padding: 10px;
+    }
+
+    .avatar-icon img,
+    .avatar-icon i {
+        width: 120px;
+        height: 120px;
+    }
+
+    .features h1 {
+        font-size: 36px;
+    }
+}

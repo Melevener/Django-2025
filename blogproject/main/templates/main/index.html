@@ -1,0 +1,49 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        {% endfor %}
+    {% endif %}
+    <div class="features">
+        <div class="container">
+            <div class="row text-center">
+                <h1 class="display-4">Добро пожаловать на наш блог!</h1>
+                <p class="lead">Самые свежие новости, статьи и обзоры на любые темы. Присоединяйтесь к нашему сообществу!</p>
+                <hr class="my-4">
+                <div class="col-md-8 mx-auto">
+                    <p>Наш блог — это место, где вы найдёте актуальные новости, полезные статьи и вдохновляющие истории. Зарегистрируйтесь, чтобы делиться своими мыслями или стать редактором и публиковать собственные материалы!</p>
+                    <a href="{% url 'news_home' %}" class="btn btn-primary btn-lg mt-3">
+                        <i class="fa-solid fa-newspaper"></i> Перейти к новостям
+                    </a>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-md-6">
+                    <div class="card bg-dark text-white">
+                        <div class="card-body">
+                            <h5 class="card-title">Для читателей</h5>
+                            <p class="card-text">Читайте последние новости, комментируйте и делитесь впечатлениями.</p>
+                            <a href="{% url 'register' %}" class="btn btn-outline-light">Зарегистрироваться</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card bg-dark text-white">
+                        <div class="card-body">
+                            <h5 class="card-title">Для редакторов</h5>
+                            <p class="card-text">Создавайте и публикуйте свои статьи, чтобы делиться знаниями с миром.</p>
+                            <a href="{% url 'login' %}" class="btn btn-outline-light">Войти как редактор</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
